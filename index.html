@@ -12,65 +12,67 @@
       href="./images/favicon-32x32.png"
     />
 
-    <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="./src/style.css" />
 
     <title>Frontend Mentor | Interactive rating component</title>
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
+  
   </head>
   <body>
     <!-- Rating state start -->
     <div class="main">
-      <div class="container">
-        <div class="circle top-star">
-          <span class="material-icons-outlined"> star </span>
+
+      <div class="rate" id="rate">
+        <div class="container">
+          <div class="circle top-star">
+            <img src="./images/icon-star.svg" alt="star" />
+          </div>
+          <div class="text-area">
+            <p class="title">How did we do?</p>
+            <p class="sub-title">
+              Please let us know how we did with your support request. All
+              feedback is appreciated to help us improve our offering!
+            </p>
+          </div>
+          <div class="numbers">
+            <button class="circle" onclick="userRate(1)">1</button>
+            <button class="circle" onclick="userRate(2)">2</button>
+            <button class="circle" onclick="userRate(3)">3</button>
+            <button class="circle" onclick="userRate(4)">4</button>
+            <button class="circle" onclick="userRate(5)">5</button>
+          </div>
+          <button class="btn-submit" onclick="displayThanks()">SUBMIT</button>
+          <div class="error" id="error"></div>
         </div>
-        <div class="text-area">
-          <p class="title">How did we do?</p>
-          <p class="sub-title">
-            Please let us know how we did with your support request. All
-            feedback is appreciated to help us improve our offering!
-          </p>
+      </div>
+
+      <div class="state" id="state">
+        <div class="container">
+          <div class="state-img">
+            <img src="./images/illustration-thank-you.svg" alt="state" />
+          </div>
+          <div class="state-user-container">
+            <div class="state-user">
+              <p id="user-response"></p>
+            </div>
+          </div>
+          <div class="text-area thx">
+            <p class="title thx">Thank you!</p>
+            <p class="sub-title">
+              We appreciate you taking the time to give a rating. If you ever
+              need more support, don’t hesitate to get in touch!
+            </p>
+          </div>
         </div>
-        <div class="numbers">
-          <div class="circle">1</div>
-          <div class="circle">2</div>
-          <div class="circle">3</div>
-          <div class="circle">4</div>
-          <div class="circle">5</div>
-        </div>
-        <button class="btn-submit">SUBMIT</button>
+      </div>
+
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Rigoberto Alcantar</a>.
       </div>
     </div>
 
-    1 2 3 4 5
-
-    <!-- Rating state end -->
-
-    <!-- Thank you state start -->
-
-    You selected
-    <!-- Add rating here -->
-    out of 5 Thank you! We appreciate you taking the time to give a rating. If
-    you ever need more support, don’t hesitate to get in touch!
-
-    <!-- Thank you state end -->
-
-    <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
-    </div>
+    <script src="./src/index.js"></script>
   </body>
 </html>
